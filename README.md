@@ -18,19 +18,6 @@ except some optional visualization functions located in `package/visualization/v
 
 Scripts to run the algorithm are located at the root of the repo.
 
-## Test Data
-1 burst can be found in the `test_data` folder (each burst being in its own subfolder)
-Feel free to add your own data. The structure of a burst folder must be the following:
-- the burst name is specified by the name of the folder itself
-- burst images must be stored as .dng files (most proprietary raw images formats can be turned to DNG using [Adobe DNG Converter](https://helpx.adobe.com/photoshop/using/adobe-dng-converter.html)
-- image files must be named the following way: `commonpart<X>.dng`, where `<X>` gives an indication of the frame number (eg `payload_N000.dng`, `payload_N001.dng` / `G0140178.dng`, `G0140179.dng`)
-- you can specify the reference frame by putting a zero-indexed number inside a `reference_frame.txt` file (i.e. 0 for the 1st frame)
-
-Additional data can be downloaded via the following links:
-- gopro bursts created for the purpose of the IPOL article: https://drive.google.com/drive/folders/1j2NIEPSnrdjS0sjL1kzl3VEmYKBkChJD?usp=sharing
-- HDR+ dataset from the original article: https://hdrplusdata.org/dataset.html
-- curated subset of bursts used in the IPOL demo: https://drive.google.com/drive/folders/1bHttOqV_R7QLJPLkLVlffRInZFlNKB1q?usp=sharing
-
 ## Running the Code
 Two scripts are provided to either run the algorithm on a single burst (`runHdrplus.py`)
 or on a series of bursts all within the same parent folder (`runHdrplus_multiple.py`).
@@ -40,7 +27,7 @@ Examples of use:
 python runHdrplus.py -i ./test_data/33TJ_20150606_224837_294 -o ./results_test1 -m full -v 2
 ```
 ```
-python runHdrplus_multiple -i ./test_data -o ./results_test2 -m full
+python runHdrplus_multiple.py -i ./test_data -o ./results_test2 -m full
 ```
 	
 You can run the algorithm in three modes (`-m` command argument):
@@ -59,6 +46,19 @@ You can run the algorithm in three modes (`-m` command argument):
 You can also change the values of the `'write___'` dictionary items in `params.py` to change the kind of files dumped in each mode (at your own risk).
 
 A helper script for the minimal processing of raw .dng files into .png/.jpg files (e.g. for the visualization of input images) is also included in the code: `all_dngs_to_png.py`
+
+## Test Data
+1 burst can be found in the `test_data` folder (each burst being in its own subfolder)
+Feel free to add your own data. The structure of a burst folder must be the following:
+- the burst name is specified by the name of the folder itself
+- burst images must be stored as .dng files (most proprietary raw images formats can be turned to DNG using [Adobe DNG Converter](https://helpx.adobe.com/photoshop/using/adobe-dng-converter.html)
+- image files must be named the following way: `commonpart<X>.dng`, where `<X>` gives an indication of the frame number (eg `payload_N000.dng`, `payload_N001.dng` / `G0140178.dng`, `G0140179.dng`)
+- you can specify the reference frame by putting a zero-indexed number inside a `reference_frame.txt` file (i.e. 0 for the 1st frame)
+
+Additional data can be downloaded via the following links:
+- gopro bursts created for the purpose of the IPOL article: https://drive.google.com/drive/folders/1j2NIEPSnrdjS0sjL1kzl3VEmYKBkChJD?usp=sharing
+- HDR+ dataset from the original article: https://hdrplusdata.org/dataset.html
+- curated subset of bursts used in the IPOL demo: https://drive.google.com/drive/folders/1bHttOqV_R7QLJPLkLVlffRInZFlNKB1q?usp=sharing
 
 ## COPYRIGHT AND LICENSE INFORMATION
 Copyright (c) 2021 Antoine Monod
