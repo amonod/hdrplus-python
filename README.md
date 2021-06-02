@@ -43,7 +43,7 @@ python runHdrplus.py -i ./test_data/33TJ_20150606_224837_294 -o ./results_test1 
 python runHdrplus_multiple -i ./test_data -o ./results_test2 -m full
 ```
 	
-You can run the algorithm in three modes ("-m" command argument):
+You can run the algorithm in three modes (`-m` command argument):
 - **full**:
 	- required inputs (per burst folder): all raw .dng burst files and a single reference_frame.txt file
 	- outputs (per burst folder): 3 .jpg images: final image `X_final.jpg` + minimally processed versions of the reference and merged image `X_reference_gamma.jpg` `X_merged_gamma.jpg`
