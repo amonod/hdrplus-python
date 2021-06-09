@@ -3,6 +3,8 @@ Open source Python implementation of the HDR+ photography pipeline, originally d
 
 For an interactive demo and the associated article, _**An Analysis and Implementation of the HDR+ Burst Denoising Method**_, check out [Image Processing On Line](https://www.ipol.im/pub/art/2021/336/)
 
+_Note: A C++ / Halide implementation by different authors is available [here](https://github.com/timothybrooks/hdr-plus/)._
+
 ## Installation Instructions
 All the libraries necessary to run the code are listed in the hdrplus.yml Conda environment file.
 Simply run
