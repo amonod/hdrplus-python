@@ -53,7 +53,7 @@ A helper script for the minimal processing of raw .dng files into .png/.jpg file
 1 burst can be found in the `test_data` folder (each burst being in its own subfolder)
 Feel free to add your own data. The structure of a burst folder must be the following:
 - the burst name is specified by the name of the folder itself
-- burst images must be stored as .dng files (most proprietary raw images formats can be turned to DNG using [Adobe DNG Converter](https://helpx.adobe.com/photoshop/using/adobe-dng-converter.html)
+- burst images must be stored as .dng files (most proprietary raw images formats can be turned to DNG using [Adobe DNG Converter](https://helpx.adobe.com/photoshop/using/adobe-dng-converter.html))
 - image files must be named the following way: `commonpart<X>.dng`, where `<X>` gives an indication of the frame number (eg `payload_N000.dng`, `payload_N001.dng` / `G0140178.dng`, `G0140179.dng`)
 - you can specify the reference frame by putting a zero-indexed number inside a `reference_frame.txt` file (i.e. 0 for the 1st frame)
 
@@ -61,6 +61,21 @@ Additional data can be downloaded via the following links:
 - gopro bursts created for the purpose of the IPOL article: https://drive.google.com/drive/folders/1j2NIEPSnrdjS0sjL1kzl3VEmYKBkChJD?usp=sharing
 - HDR+ dataset from the original article: https://hdrplusdata.org/dataset.html
 - curated subset of bursts used in the IPOL demo: https://drive.google.com/drive/folders/1bHttOqV_R7QLJPLkLVlffRInZFlNKB1q?usp=sharing
+
+## Citation
+
+If you find this work useful in your research or publication, please cite our paper:
+```
+@article{ipol.2021.336,
+    title   = {{An Analysis and Implementation of the HDR+ Burst Denoising Method}},
+    author  = {Monod, Antoine and Delon, Julie and Veit, Thomas},
+    journal = {{Image Processing On Line}},
+    volume  = {11},
+    pages   = {142--169},
+    year    = {2021},
+    note    = {\url{https://doi.org/10.5201/ipol.2021.336}}
+}
+```
 
 ## COPYRIGHT AND LICENSE INFORMATION
 Copyright (c) 2021 Antoine Monod
