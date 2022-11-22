@@ -288,10 +288,10 @@ def upsampleAlignments(referencePyramidLevel, alternatePyramidLevel, previousAli
 	neighborsMask = np.tile(tile, (upsampledAlignments.shape[0] // repeatFactor, upsampledAlignments.shape[1] // repeatFactor, 1, 1))
 
 	# Compute the indices of the neighbors using the offsets mask
-	ti1 = np.repeat(np.clip(2 + np.arange(h) // repeatFactor + neighborsMask[:, 0, 0, 0], 0, paddedPreviousAlignments.shape[0] - 1).reshape(h, 1), w, axis=1).reshape(h * w)
-	ti2 = np.repeat(np.clip(2 + np.arange(h) // repeatFactor + neighborsMask[:, 0, 1, 0], 0, paddedPreviousAlignments.shape[0] - 1).reshape(h, 1), w, axis=1).reshape(h * w)
-	tj1 = np.repeat(np.clip(2 + np.arange(w) // repeatFactor + neighborsMask[0, :, 0, 1], 0, paddedPreviousAlignments.shape[1] - 1).reshape(1, w), h, axis=0).reshape(h * w)
-	tj2 = np.repeat(np.clip(2 + np.arange(w) // repeatFactor + neighborsMask[0, :, 1, 1], 0, paddedPreviousAlignments.shape[1] - 1).reshape(1, w), h, axis=0).reshape(h * w)
+	ti1 = np.repeat(np.clip(1 + np.arange(h) // repeatFactor + neighborsMask[:, 0, 0, 0], 0, paddedPreviousAlignments.shape[0] - 1).reshape(h, 1), w, axis=1).reshape(h * w)
+	ti2 = np.repeat(np.clip(1 + np.arange(h) // repeatFactor + neighborsMask[:, 0, 1, 0], 0, paddedPreviousAlignments.shape[0] - 1).reshape(h, 1), w, axis=1).reshape(h * w)
+	tj1 = np.repeat(np.clip(1 + np.arange(w) // repeatFactor + neighborsMask[0, :, 0, 1], 0, paddedPreviousAlignments.shape[1] - 1).reshape(1, w), h, axis=0).reshape(h * w)
+	tj2 = np.repeat(np.clip(1 + np.arange(w) // repeatFactor + neighborsMask[0, :, 1, 1], 0, paddedPreviousAlignments.shape[1] - 1).reshape(1, w), h, axis=0).reshape(h * w)
 	# Extract the previously estimated motion vectors associeted with those neighbors
 	ppa1 = paddedPreviousAlignments[ti1, tj1].reshape((h, w, 2))
 	ppa2 = paddedPreviousAlignments[ti2, tj2].reshape((h, w, 2))
